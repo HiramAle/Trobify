@@ -6,9 +6,8 @@
 package Servlets;
 
 import DataBase.DataBaseController;
+import Model.Agency;
 import Model.Client;
-import Model.Person;
-import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -17,13 +16,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author magic
  */
-public class Login extends HttpServlet {
+public class AddAgency extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,30 +38,15 @@ public class Login extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             DataBaseController control = new DataBaseController();
-            User user = new User();
-            user.seteMail(request.getParameter("loginCorreo"));
-            user.setPassword(request.getParameter("loginContrasena"));
-            if (control.matchUser(user)) {
-                HttpSession session = request.getSession();
-                Person person = control.searchPerson(user.geteMail());
-                if(person.geteMail()==null){
-                    session.setAttribute("userType", 2);
-                }else{
-                    session.setAttribute("user", person);
-                    person= control.searchClient(user.geteMail());
-                    if(person.geteMail()==null){
-                        session.setAttribute("userType", 1);
-                    }else{
-                        session.setAttribute("userType", 0);
-                    }
-                    
-                }
-                response.sendRedirect("MainPage.jsp");
-            } else {
-                response.sendRedirect("Login.jsp");
-            }
+            
+            Agency agency = new Agency();
+            agency.setName(request.getParameter("nombreAgencia"));
+            agency.seteMail(request.getParameter("registroCorreo"));
+            agency.setPassword(request.getParameter("registroContrasena"));
+            control.addAgency(agency);
+            response.sendRedirect("Login.jsp");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

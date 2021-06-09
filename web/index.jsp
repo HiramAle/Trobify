@@ -71,10 +71,6 @@
 
         <div class="info" id="info">
             <p>¿Quienes somos?</p>
-            <form name="Formulario" action="Servlet" method="POST">
-                <input type="text" name="nombre" value="Nombre" />
-                <input type="submit" value="Submit" name="agregar"  />
-            </form>
         </div>
 
 

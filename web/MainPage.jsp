@@ -9,7 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    Person user = (Person) session.getAttribute("Usuario");
+    User user = (User) session.getAttribute("Usuario");
     
 %>
 
@@ -28,12 +28,11 @@
     <body>
         <div class="navbar">
             <div class="navbarLogo">
-                <a class="logoboton" href="/Trobify"><img id="logo" src="Resources/Images/logo.png" alt="Logo"></a>
+                <a class="logoboton" href="MainPage.jsp"><img id="logo" src="Resources/Images/logo.png" alt="Logo"></a>
             </div>
             <div class="navbarOptions">
                 <a href="#"><div id="google_translate_element"></div></a>
-                <a href="Login.jsp" class="userName" id="perfil"><%= user.getPersonName() %></a>
-                <a href="#info">¿Quienes somos?</a>
+                <a href="Login.jsp" class="userName" id="perfil"></a>
                 <a href="#news">Ofrece un Inmueble</a>
                 <a href="envioSugerencias.html">Enviar Sugerencias</a>
             </div>
@@ -77,10 +76,6 @@
 
         <div class="info" id="info">
             <p>¿Quienes somos?</p>
-            <form name="Formulario" action="Servlet" method="POST">
-                <input type="text" name="nombre" value="Nombre" />
-                <input type="submit" value="Submit" name="agregar"  />
-            </form>
         </div>
 
 

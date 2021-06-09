@@ -20,7 +20,7 @@ and open the template in the editor.
     margin-right: 2%;
 }
 
-.main input[type="text"] {
+.logindiv input[type="text"] {
     background-color: #F9F9F9;
     border-radius: 1em;
     text-align: center;
@@ -36,11 +36,11 @@ and open the template in the editor.
     
 }
 
-.main input[type="text"]:focus {
+.logindiv input[type="text"]:focus {
     color: #284B5E;
 }
 
-.main input[type="password"] {
+.logindiv input[type="password"] {
     background-color: #F9F9F9;
     border-radius: 1em;
     text-align: center;
@@ -55,11 +55,11 @@ and open the template in the editor.
     height: 2em;
 }
 
-.main input[type="password"]:focus {
+.logindiv input[type="password"]:focus {
     color: #284B5E;
 }
 
-.main input[type="submit"]{
+.logindiv input[type="submit"]{
     background-color: #F9F9F9;
     border: none;
     text-decoration: none;
@@ -83,3 +83,71 @@ and open the template in the editor.
     margin-right: 2.5%;
 }
 
+.logindiv{
+    padding-top: 10%;
+    background-color: #284B5E;
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+}
+
+.registerAgency{
+    padding-top: 10%;
+    background-color: #284B5E;
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+}
+
+.registerAgency input[type="text"] {
+    background-color: #F9F9F9;
+    border-radius: 1em;
+    text-align: center;
+    color: #AFAFAF;
+    width: 90%;
+    transition: all 0.3s ease-in-out;
+    font-size: 1em;
+    border-color: transparent;
+    outline-width: 0;
+    margin-top: 2%;
+    height: 2em;
+    margin-bottom: 2%;
+    
+}
+
+.registerAgency input[type="text"]:focus {
+    color: #284B5E;
+}
+
+.registerAgency input[type="password"] {
+    background-color: #F9F9F9;
+    border-radius: 1em;
+    text-align: center;
+    color: #AFAFAF;
+    width: 90%;
+    transition: all 0.3s ease-in-out;
+    font-size: 1em;
+    border-color: transparent;
+    outline-width: 0;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 2em;
+}
+
+.registerAgency input[type="password"]:focus {
+    color: #284B5E;
+}
+
+.registerAgency input[type="submit"]{
+    background-color: #F9F9F9;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins';
+    border-radius: 2em;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin: 1%;
+}

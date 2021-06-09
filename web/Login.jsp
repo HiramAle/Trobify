@@ -30,7 +30,7 @@
                 <a href="envioSugerencias.html">Enviar Sugerencias</a>
             </div>
         </div>
-        <div class="main" >
+        <div class="logindiv" >
             <div class="divForm" >
                 <form class="" name="loginForm" action="Login" method="POST" >
                     <p>Inicia Sesion</p>
@@ -46,12 +46,23 @@
                         <input type="text" name="registroNombre" value="" autocomplete="off" placeholder="Nombre"/>
                         <input type="text" name="registroApellido" value="" autocomplete="off" placeholder="Apellido(s)"/>
                     </div>
-                      <input type="text" name="registroCorreo" value="" autocomplete="off" placeholder="Correo"/>
+                    <input type="text" name="registroCorreo" value="" autocomplete="off" placeholder="Correo"/>
                     <input type="password" name="registroContrasena" value="" autocomplete="off" placeholder="Contraseña"/>
                     <input type="submit" value="Registrarse" name="submit" />
                 </form>
             </div>
 
+        </div>
+        <div class="registerAgency" >
+            <div class="divForm" >
+                <form class="" name="registerForm" action="AddAgency" method="POST">
+                    <p>Registrar Agencia</p>
+                    <input type="text" name="nombreAgencia" value="" autocomplete="off" placeholder="Nombre"/>
+                    <input type="text" name="registroCorreo" value="" autocomplete="off" placeholder="Correo"/>
+                    <input type="password" name="registroContrasena" value="" autocomplete="off" placeholder="Contraseña"/>
+                    <input type="submit" value="Registrar" name="submit" />
+                </form>
+            </div>
         </div>
     </body>
 </html>
