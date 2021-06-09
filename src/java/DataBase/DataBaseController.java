@@ -90,6 +90,23 @@ public class DataBaseController {
         return client;
     }
     
+    public Agency searchAgency(String mail) throws ClassNotFoundException{
+        Agency agency = new Agency();
+        try {
+            control.CreateConnection();
+            query="SELECT * FROM Agencia WHERE correo = '"+mail+"'";
+            res=control.SQLStatement(query);
+            if(res.next()){
+                agency.setName(res.getString(2));
+                agency.seteMail(res.getString(3));
+            }
+        } catch (SQLException e) {
+            System.out.println("Problema en DATABASECONTROLLER");
+            System.out.println(e);
+        }
+        return agency;
+    }
+    
     public void addAgency(Agency agency)throws ClassNotFoundException{
         try {
             control.CreateConnection();

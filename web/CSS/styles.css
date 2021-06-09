@@ -94,18 +94,37 @@ body {
 }
 
 .navbar a{
-	text-decoration: none;
-	color: #F9F9F9;
-	margin-left: 1%;
-	margin-right: 1%;
-	padding-left: 1%;
-	padding-right: 1%;
-	float: right;
+    text-decoration: none;
+    color: #F9F9F9;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    float: right;
 }
 
 #iniciarSesion:hover{
     color: #F9F9F9;
     transition: 0.5s;
+}
+
+.endSession a {
+  top: 10%;
+  position: absolute; /* Position them relative to the browser window */
+  left: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+  background-color: #21C7DB;
+  color: #F9F9F9;
+}
+
+.endSession a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
 }
 
 /* ScrollBar */
@@ -123,5 +142,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #ffa927a1;
+    background: #FFA927A1;
 }
+

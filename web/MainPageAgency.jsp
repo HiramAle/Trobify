@@ -4,13 +4,13 @@
     Author     : magic
 --%>
 
+<%@page import="Model.Agency"%>
 <%@page import="Model.Person"%>
 <%@page import="Model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    User user = (User) session.getAttribute("Usuario");
-    
+    Agency agency = (Agency) session.getAttribute("Agency");
 %>
 
 <!DOCTYPE html>
@@ -32,8 +32,9 @@
             </div>
             <div class="navbarOptions">
                 <a href="#"><div id="google_translate_element"></div></a>
-                <a href="Login.jsp" class="userName" id="perfil"></a>
-                <a href="#news">Ofrece un Inmueble</a>
+                <a href="" class="userName" id="perfil"><%= agency.getName() %></a>
+                <a href="#news">Inmuebles</a>
+                <a href="#news">Agentes</a>
                 <a href="envioSugerencias.html">Enviar Sugerencias</a>
             </div>
         </div>

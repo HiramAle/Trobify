@@ -6,6 +6,7 @@
 package Servlets;
 
 import DataBase.DataBaseController;
+import Model.Agency;
 import Model.Client;
 import Model.Person;
 import Model.User;
@@ -46,19 +47,26 @@ public class Login extends HttpServlet {
             if (control.matchUser(user)) {
                 HttpSession session = request.getSession();
                 Person person = control.searchPerson(user.geteMail());
-                if(person.geteMail()==null){
+                
+                if (person.geteMail() == null) {
                     session.setAttribute("userType", 2);
-                }else{
+                    Agency agency = control.searchAgency(user.geteMail());
+                    session.setAttribute("Agency", agency);
+                    response.sendRedirect("MainPageAgency.jsp");
+                } else {
                     session.setAttribute("user", person);
-                    person= control.searchClient(user.geteMail());
-                    if(person.geteMail()==null){
+                    person = control.searchClient(user.geteMail());
+                    if (person.geteMail() == null) {
                         session.setAttribute("userType", 1);
-                    }else{
+                    } else {
                         session.setAttribute("userType", 0);
+                        Client client = control.searchClient(user.geteMail());
+                        session.setAttribute("Client", client);
+                        response.sendRedirect("MainPageClient.jsp");
                     }
-                    
+
                 }
-                response.sendRedirect("MainPage.jsp");
+
             } else {
                 response.sendRedirect("Login.jsp");
             }
