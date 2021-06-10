@@ -28,7 +28,6 @@
                 <a href="#"><div id="google_translate_element"></div></a>
                 <a href="Login.jsp" id="">Inicia sesion</a>
                 <a href="#info">¿Quienes somos?</a>
-                <a href="#news">Ofrece un Inmueble</a>
                 <a href="envioSugerencias.html">Enviar Sugerencias</a>
             </div>
         </div>

@@ -33,7 +33,7 @@
             <div class="navbarOptions">
                 <a href="#"><div id="google_translate_element"></div></a>
                 <a href="Login.jsp" class="userName" id="perfil"><%= client.getPersonName()%></a>
-                <a href="#news">Registrar Inmueble</a>
+                <a href="RegisterProperty.jsp">Registrar Inmueble</a>
                 <a href="envioSugerencias.html">Enviar Sugerencias</a>
             </div>
         </div>
