@@ -44,29 +44,32 @@ public class Login extends HttpServlet {
             User user = new User();
             user.seteMail(request.getParameter("loginCorreo"));
             user.setPassword(request.getParameter("loginContrasena"));
+            //Valida que exista el usuario
             if (control.matchUser(user)) {
                 HttpSession session = request.getSession();
                 Person person = control.searchPerson(user.geteMail());
-                
+                //Coloca los atributos de la sesion
+                session.setAttribute("user",user);
+                //System.out.println("Correo: "+person.geteMail());
+                //Si es Agencia
                 if (person.geteMail() == null) {
+                    //Coloca los atributos de la sesion
                     session.setAttribute("userType", 2);
-                    Agency agency = control.searchAgency(user.geteMail());
-                    session.setAttribute("Agency", agency);
-                    response.sendRedirect("MainPageAgency.jsp");
-                } else {
-                    session.setAttribute("user", person);
-                    person = control.searchClient(user.geteMail());
-                    if (person.geteMail() == null) {
+                    //Agency agency = control.searchAgency(user.geteMail());
+                } else {//Si es persona
+                    Client client = control.searchClient(user.geteMail());
+                    //Es un Agente
+                    if (client.geteMail() == null) {
                         session.setAttribute("userType", 1);
+                        System.out.println("Agente");
                     } else {
+                        //Es un Cliente
                         session.setAttribute("userType", 0);
-                        Client client = control.searchClient(user.geteMail());
-                        session.setAttribute("Client", client);
-                        response.sendRedirect("MainPageClient.jsp");
+                        
                     }
 
                 }
-
+                response.sendRedirect("MainPage.jsp");
             } else {
                 response.sendRedirect("Login.jsp");
             }

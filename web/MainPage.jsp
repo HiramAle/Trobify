@@ -4,13 +4,35 @@
     Author     : magic
 --%>
 
+<%@page import="Model.Agent"%>
+<%@page import="Model.Agency"%>
+<%@page import="DataBase.DataBaseController"%>
 <%@page import="Model.Client"%>
 <%@page import="Model.Person"%>
 <%@page import="Model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    Client client = (Client) session.getAttribute("Client");
+    DataBaseController control = new DataBaseController();
+    User user = (User) session.getAttribute("user");
+    Client client = new Client();
+    Agency agency = new Agency();
+    Agent agent = new Agent();
+    int userType = (Integer) session.getAttribute("userType");
+    switch (userType) {
+        case 0:
+            client = control.searchClient(user.geteMail());
+            session.setAttribute("client", client);
+            break;
+        case 1:
+            agent = control.searchAgent(user.geteMail());
+            session.setAttribute("agent", agent);
+            break;
+        case 2:
+            agency = control.searchAgency(user.geteMail());
+            session.setAttribute("agency", agency);
+            break;
+    }
 %>
 
 <!DOCTYPE html>
@@ -26,19 +48,56 @@
 
     </head>
     <body>
-
+        <%
+            switch (userType) {
+                case 0:
+        %>
         <div class="navbar">
             <div class="navbarLogo">
-                <a class="logoboton" href="MainPageClient.jsp"><img id="logo" src="Resources/Images/logo.png" alt="Logo"></a>
+                <a class="logoboton" href="MainPage.jsp"><img id="logo" src="Resources/Images/logo.png" alt="Logo"></a>
             </div>
             <div class="navbarOptions">
                 <a href="#"><div id="google_translate_element"></div></a>
                 <a href="" class="userName" id="perfil"><%= client.getPersonName()%></a>
-                <a href="MainPageOwner.jsp">Modo Propietario</a>
+                <a href="RegisterProperty.jsp">Ofrece un Inmueble</a>
                 <a href="envioSugerencias.html">Enviar Sugerencias</a>
             </div>
         </div>
-
+        <%
+                break;
+            case 1:
+        %>
+        <div class="navbar">
+            <div class="navbarLogo">
+                <a class="logoboton" href="MainPage.jsp"><img id="logo" src="Resources/Images/logo.png" alt="Logo"></a>
+            </div>
+            <div class="navbarOptions">
+                <a href="#"><div id="google_translate_element"></div></a>
+                <a href="Login.jsp" class="userName" id="perfil">afsdfvasdfasedfasd</a>
+                <a href="RegisterProperty.jsp">Ofrece un Inmueble</a>
+                <a href="envioSugerencias.html">Enviar Sugerencias</a>
+            </div>
+        </div>
+        <%
+                break;
+            case 2:
+        %>
+        <div class="navbar">
+            <div class="navbarLogo">
+                <a class="logoboton" href="MainPage.jsp"><img id="logo" src="Resources/Images/logo.png" alt="Logo"></a>
+            </div>
+            <div class="navbarOptions">
+                <a href="#"><div id="google_translate_element"></div></a>
+                <a href="" class="userName" id="perfil"><%= agency.getName()%></a>
+                <a href="#news">Ofrece un Inmueble</a>
+                <a href="#news">Agentes</a>
+                <a href="envioSugerencias.html">Enviar Sugerencias</a>
+            </div>
+        </div>
+        <%
+                    break;
+            }
+        %>
         <div class="main" >
 
             <div class="mainText">
@@ -79,7 +138,7 @@
         <div class="info" id="info">
             <p>¿Quienes somos?</p>
         </div>
-        
+
         <div class="endSession" >
             <a href="index.jsp"  >Cerrar Sesion</a>
         </div>

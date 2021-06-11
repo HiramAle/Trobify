@@ -11,8 +11,20 @@ package Model;
  */
 public class Agent extends Person {
     
+    private String agencyMail;
+    
     public Agent(){
         super();
     }
+
+    public String getAgencyMail() {
+        return agencyMail;
+    }
+
+    public void setAgencyMail(String agencyMail) {
+        this.agencyMail = agencyMail;
+    }
+    
+    
     
 }
