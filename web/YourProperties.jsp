@@ -1,17 +1,17 @@
 <%-- 
-    Document   : mainPage
-    Created on : 9/06/2021, 01:05:57 PM
+    Document   : YourPropertys
+    Created on : 10/06/2021, 09:47:35 PM
     Author     : magic
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Property"%>
 <%@page import="Model.Agent"%>
 <%@page import="Model.Agency"%>
-<%@page import="DataBase.DataBaseController"%>
 <%@page import="Model.Client"%>
-<%@page import="Model.Person"%>
 <%@page import="Model.User"%>
+<%@page import="DataBase.DataBaseController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%
     DataBaseController control = new DataBaseController();
     User user = (User) session.getAttribute("user");
@@ -34,7 +34,6 @@
             break;
     }
 %>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -45,7 +44,6 @@
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <link rel="stylesheet" href="CSS/styles.css">
         <link rel="stylesheet" href="CSS/indexStyles.css">
-
     </head>
     <body>
         <%
@@ -99,44 +97,32 @@
             }
         %>
         <div class="main" >
+            
+        </div>   
+        
+        <div>
+            <%
+                ArrayList<Property> properties = control.getProperties(user);
+                for (int i = 0; i < properties.size(); i++) {
+                        
+                        
+                    
+            %>
 
-            <div class="mainText">
-                <p>
-                    ¿Buscas un lugar donde <br>
-                    vivir, o pasar una <br>
-                    temporada? <br>
-                </p>
-                <div class="filtros">
-                    <div class="divSelect">
-                        <select name="TipoInmueble">
-                            <option value="1">Casa</option>
-                            <option value="2">Departamento</option>
-                        </select>
-                    </div>
-                    <div class="radiobutt">
-                        <input type="radio" name="tipo" id="Venta" checked>
-                        <label for="Venta">Venta</label> 
-                        <input type="radio" name="tipo" value="Renta">
-                        <label for="Renta">Renta</label>
-                    </div>
+            <div class="propertyCard" >
+                <div class="imagenMuestra" >
+                    <img src="Resources/Images/icon.png" alt="">
                 </div>
-                <div class="mainBuscador">
-                    <div class="divBuscador">
-                        <input class="buscador" type="text" placeholder="Departamento en CDMX">
-                        <a  href="resultadosBusqueda.html" ><img class="lupita" src="Resources/Images/lupititititita.png"></a>
-                    </div>
-
+                <div class="infoMuestra" >
+                    <h2><%=properties.get(i).getPropertyName()%></h2>
+                    <p>Anfitrión: José Alfredo</p>
+                    <p>2 personitas</p>
+                    <a href="fichaDetalladaInm.html" id="verficha">Ver ficha detallada</a>
                 </div>
             </div>
-
-            <div class="mainImage">
-                <img id="people" src="Resources/Images/mainPeople.png" alt="Logo">
-            </div>
-
-        </div>
-
-        <div class="info" id="info">
-            <p>¿Quienes somos?</p>
+            <%
+                }
+            %>
         </div>
 
         <div class="endSession" >
@@ -152,4 +138,3 @@
         new google.translate.TranslateElement({pageLenguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
 </script>
-

@@ -59,3 +59,57 @@ and open the template in the editor.
     font-weight: bold;
     font-size: 500%;
 }
+
+.propertyCard{
+
+    margin: 5%;
+    padding: 5%;
+    border-radius: 1em;
+    background-color: white;
+    box-shadow: 1px 1px 10px gray;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+
+}
+
+.infoMuestra{
+	width: 60%;
+	padding-left: 5%;
+}
+
+.propertyCard:hover{
+	transform: scale(1.1);
+	
+}
+
+#verficha{
+        text-decoration: none;
+	background-color: #21C7DB;
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+        color: #F9F9F9;
+        margin-left: 1%;
+	margin-right: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	float: right;
+}
+
+#verficha:hover{
+	color: #F9F9F9 ;
+	transition: 0.5s;
+}
+
+.imagenMuestra img {
+	width: 50%;
+	border-radius: 1em;
+}
+
+.imagenMuestra{
+	width: 40%;
+	
+}

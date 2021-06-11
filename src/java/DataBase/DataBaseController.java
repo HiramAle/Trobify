@@ -14,6 +14,7 @@ import Model.Client;
 import Model.Person;
 import Model.Property;
 import Model.User;
+import java.util.ArrayList;
 
 /**
  *
@@ -157,6 +158,24 @@ public class DataBaseController {
         }
     }
     
+    public ArrayList<Property> getProperties(User user) throws ClassNotFoundException{
+        ArrayList<Property> properties = new ArrayList();
+        try {
+            control.CreateConnection();
+            query="SELECT * FROM Inmueble WHERE correoPropietario = '"+user.geteMail()+"'";
+            res=control.SQLStatement(query);
+            Property property = null;
+            while(res.next()){
+                property = new Property();
+                property.setPropertyName(res.getString(4));
+                properties.add(property);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return properties;
+    }
     
     
     
