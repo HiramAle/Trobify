@@ -98,9 +98,9 @@
         %>
         <div class="main" >
             
-        </div>   
         
-        <div>
+        
+        <div class="propertiesList" >
             <%
                 ArrayList<Property> properties = control.getProperties(user);
                 for (int i = 0; i < properties.size(); i++) {
@@ -115,8 +115,9 @@
                 </div>
                 <div class="infoMuestra" >
                     <h2><%=properties.get(i).getPropertyName()%></h2>
-                    <p>Anfitrión: José Alfredo</p>
-                    <p>2 personitas</p>
+                    <p>Cuartos: <%=properties.get(i).getRooms() %></p>
+                    <p>Baños: <%=properties.get(i).getToilets() %></p>
+                    <p><%=properties.get(i).getDescription() %></p>
                     <a href="fichaDetalladaInm.html" id="verficha">Ver ficha detallada</a>
                 </div>
             </div>
@@ -124,7 +125,7 @@
                 }
             %>
         </div>
-
+</div>   
         <div class="endSession" >
             <a href="index.jsp"  >Cerrar Sesion</a>
         </div>

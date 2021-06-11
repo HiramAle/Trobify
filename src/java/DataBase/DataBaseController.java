@@ -168,6 +168,9 @@ public class DataBaseController {
             while(res.next()){
                 property = new Property();
                 property.setPropertyName(res.getString(4));
+                property.setRooms(res.getInt(5));
+                property.setToilets(res.getInt(6));
+                property.setDescription(res.getString(7));
                 properties.add(property);
             }
             

@@ -24,6 +24,7 @@ and open the template in the editor.
     
 }
 
+
 .addProperty input[type="text"]:focus {
     color: #284B5E;
 }
@@ -44,6 +45,7 @@ and open the template in the editor.
     margin-left: 2.5%;
     margin-right: 2.5%;
 }
+
 
 .addProperty{
     color: #F9F9F9;
@@ -67,4 +69,21 @@ and open the template in the editor.
     padding-left: 3%;
     padding-right: 3%;
     margin: 1%;
+}
+
+.nombres input[type="number"]{
+    width: 50%;
+    background-color: #F9F9F9;
+    border-radius: 1em;
+    text-align: center;
+    color: #AFAFAF;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    transition: all 0.3s ease-in-out;
+    font-size: 1em;
+    border-color: transparent;
+    outline-width: 0;
+    margin-top: 2%;
+    height: 2em;
+    margin-bottom: 2%;
 }

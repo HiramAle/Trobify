@@ -83,20 +83,21 @@
                     <p>Registrar Inmueble</p>
                     <input type="text" name="registroNombre" value="" autocomplete="off" placeholder="Nombre"/>
                     <div class="nombres" >
-                        <input type="text" name="registroCuartos" value="" autocomplete="off" placeholder="Número de cuartos"/>
-                        <input type="text" name="registroBanos" value="" autocomplete="off" placeholder="Numero de baños"/>
+                        <input type="number" min="0" name="registroCuartos" value="" autocomplete="off" placeholder="Número de cuartos"/>
+                        <input type="number" min="0" name="registroBanos" value="" autocomplete="off" placeholder="Numero de baños"/>
                     </div>
                     <input type="text" name="registroDescripcion" value="" autocomplete="off" placeholder="Descripcion"/>
                     <div class="nombres" >
+                        <input type="text" onkeydown="zipCode(this)" pattern=".{5}" onkeypress="return onlyNumber(event)" name="registroCP" value="" autocomplete="off" placeholder="Codigo Postal"/>
                         <input type="text" name="registroCiudad" value="" autocomplete="off" placeholder="Ciudad"/>
                         <input type="text" name="registroColonia" value="" autocomplete="off" placeholder="Colonia"/>
                     </div>
                     <div class="nombres" >
                         <input type="text" name="registroEstado" value="" autocomplete="off" placeholder="Estado"/>
-                        <input type="text" name="" value="" autocomplete="off" placeholder="Calle"/>
+                        <input type="text" name="registroCalle" value="" autocomplete="off" placeholder="Calle"/>
                     </div>
                     <div class="nombres" >
-                        <input type="text" name="registroCP" value="" autocomplete="off" placeholder="Codigo Postal"/>
+
                         <input type="text" name="registroNumero" value="" autocomplete="off" placeholder="Numero"/>
                     </div>
                     <input type="submit" value="Registrarse" name="submit" />
@@ -105,7 +106,7 @@
 
         </div>
 
-        
+
 
         <div class="endSession" >
             <a href="index.jsp"  >Cerrar Sesion</a>
@@ -119,4 +120,34 @@
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLenguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
+
+    function ifPostalCodeExists() {
+    <%
+
+    %>
+    }
+
+    function onlyNumber(evt) {
+
+        // code is the decimal ASCII representation of the pressed key.
+        var code = (evt.which) ? evt.which : evt.keyCode;
+
+        if (code == 8) { // backspace.
+            return true;
+        } else if (code >= 48 && code <= 57) { // is a number.
+            return true;
+        } else { // other keys.
+            return false;
+        }
+    }
+
+    function zipCode(element)
+    {
+        var max_chars = 5;
+
+        if (element.value.length > max_chars) {
+            element.value = element.value.substr(0, max_chars);
+        }
+    }
+
 </script>

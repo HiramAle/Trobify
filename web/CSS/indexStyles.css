@@ -88,8 +88,8 @@ and open the template in the editor.
 	border-radius: 2em;
 	padding-top: 1%;
 	padding-bottom: 1%;
-	padding-left: 5%;
-	padding-right:  5%;
+	padding-left: 7%;
+	padding-right:  7%;
 	top: 0;
         color: #F9F9F9;
         margin-left: 1%;
@@ -97,10 +97,11 @@ and open the template in the editor.
 	padding-left: 1%;
 	padding-right: 1%;
 	float: right;
+        transition: all 0.4s ease-in-out;
 }
 
 #verficha:hover{
-	color: #F9F9F9 ;
+	transform: scale(1.1);
 	transition: 0.5s;
 }
 
@@ -112,4 +113,9 @@ and open the template in the editor.
 .imagenMuestra{
 	width: 40%;
 	
+}
+
+.propertiesList{
+    width: 50%
+        
 }
