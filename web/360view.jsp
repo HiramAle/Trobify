@@ -1,13 +1,13 @@
 <%-- 
-    Document   : calculoprestamo
-    Created on : 10/06/2021, 04:09:50 PM
+    Document   : 360view
+    Created on : 11/06/2021, 05:14:32 PM
     Author     : alfre
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <link rel="icon" type="image/png" href="Resources/Images/icon.png" />
         <title>Trobify</title>
         <meta charset="UTF-8">
@@ -29,36 +29,30 @@
                 <a href="enviarSugerencias.jsp">Enviar Sugerencias</a>
                 <a href="calculadora.jsp">Calculadora de préstamos</a>
             </div>
-        </div>        
-        <div class="calcTable">
-        <% 
-        float cantprest = Float.parseFloat(request.getParameter("cantprest"));
-        float intanual = Float.parseFloat(request.getParameter("intanual"));
-        int noanios = Integer.parseInt(request.getParameter("noanios"));
-        int meses = noanios * 12;
-        float intereses = intanual/1200;
-        double factor = Math.pow(intereses+1,meses);
-        double cuota = cantprest*intereses*factor/(factor-1);
-        float cuotaf = (float) cuota;
-        float pagototal = cuotaf * (meses);
-        float pagointeres = pagototal - cantprest;   
-        out.println("<table border='1'>");
-        out.println("<tr><th colspan='2'>Cálculos estimados</th></tr>");
-        out.println("<tr><td>Pago mensual estimado </td><td>$"+String.valueOf(cuotaf)+"</td></tr>");
-        out.println("<tr><td>Cantidad del préstamo </td><td>$"+String.valueOf(cantprest)+"</td></tr>");
-        out.println("<tr><td>Total de pagos de intereses </td><td>$"+String.valueOf(pagointeres)+"</td></tr>");
-        out.println("<tr><td>Total de todos los pagos </td><td>$"+String.valueOf(pagototal)+"</td></tr>");
-        out.println("</table>");
-        out.println("");
-        out.println("");
-        %>
         </div>
-    </body>
-</html>
+	<div style="width: 400px; margin: 100px auto;">     
+            <h2 align="center" style="color: white">Visualización 360 de una habitación.</h2>
+            <p align="center" style="color: white">
+                Para esta visualización se utilizaron 23 imágenes, se recomienda usar más de 32 imágenes para una mejor visualización.
+            </p>
+		<div
+		   class="cloudimage-360"
+		   data-folder="Resources/Images/360Images/"
+		   data-filename="room-{index}.jpg"
+		   data-amount="23"
+		   data-keys="true"
+		   data-autoplay="true"
+		   data-full-screen="true"
+		></div>			
+		</div>
+	</div>
+
+	<script src="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/2.6.0/js-cloudimage-360-view.min.js"></script>
+</body>
+</html>>
 
 <script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLenguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
 </script>
-
