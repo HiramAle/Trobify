@@ -28,7 +28,8 @@
                 <a href="#"><div id="google_translate_element"></div></a>
                 <a href="Login.jsp" id="">Inicia sesion</a>
                 <a href="#info">¿Quienes somos?</a>
-                <a href="envioSugerencias.html">Enviar Sugerencias</a>
+                <a href="enviarSugerencias.jsp">Enviar Sugerencias</a>
+                <a href="calculadora.jsp">Calculadora de préstamos</a>
             </div>
         </div>
         <div class="main" >
@@ -56,7 +57,7 @@
                 <div class="mainBuscador">
                     <div class="divBuscador">
                         <input class="buscador" type="text" placeholder="Departamento en CDMX">
-                        <a  href="resultadosBusqueda.html" ><img class="lupita" src="Resources/Images/lupititititita.png"></a>
+                        <a  href="resultadosBusqueda.jsp" ><img class="lupita" src="Resources/Images/lupititititita.png"></a>
                     </div>
 
                 </div>

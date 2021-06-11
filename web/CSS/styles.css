@@ -145,3 +145,239 @@ body {
     background: #FFA927A1;
 }
 
+.descCalc {    
+    text-align: justify;
+    color: white;
+    font-size-adjust: 0.5;
+    position: fixed;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:30%;
+    left:50%;
+}
+
+.calcTable {
+    color: white;
+    font-size-adjust: 0.75;
+    position:fixed;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:50%;
+    left:50%;
+}
+
+.mainESugerencias{
+	padding-top: 10%;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	
+}
+
+.envioSugerencias{
+	width: 50%;
+}
+
+.ComentariosSugerencias{
+	margin: 5%;
+	padding: 5%;
+	border-radius: 1em;
+	background-color: white;
+	box-shadow: 1px 1px 10px gray;
+	transition: all 0.4s ease-in-out;
+	display: flex;
+}
+
+.ComentariosSugerencias:hover{
+	transform: scale(1.1);
+}
+
+#enviar{
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+}
+
+#enviar:hover{
+	transition: 0.5;
+}
+
+.resultadosInmuebles{
+	width: 50%;
+}
+
+#mapita{
+	width: 50%;
+	height: 100%;
+	margin-right: 10px;
+}
+
+#mapainm{
+	width: 70%;
+	height: 30%;
+	margin: auto;
+}
+
+#map{
+	width: 70%;
+	height: 400px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 100px;
+	margin: 0 auto;
+}
+
+.fichaMuestra{
+	margin: 5%;
+	padding: 5%;
+	border-radius: 1em;
+	background-color: white;
+	box-shadow: 1px 1px 10px gray;
+	transition: all 0.4s ease-in-out;
+	display: flex;
+}
+
+.imagenMuestra img {
+	width: 100%;
+	border-radius: 1em;
+}
+
+.imagenMuestra{
+	width: 40%;
+	
+}
+
+.infoMuestra{
+	width: 60%;
+	padding-left: 5%;
+}
+
+.fichaMuestra:hover{
+	transform: scale(1.1);
+	
+}
+
+.mainResultados{
+	padding-top: 10%;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	
+}
+
+.mainFichaDet{
+	padding-top: 10%;
+	display: flex;
+	justify-content: left;
+	height: 100%;
+	width: 100%;
+}
+
+.ficha{
+	display: flex;
+	justify-content: left;
+	height: 100%;
+	width: 50%;
+	padding: 50px;
+}
+
+.ImagenesInmueble{
+	display: block;
+}
+
+#inmueble1{
+	width: 180px;
+	height: 180px;
+}
+
+#inmueble2{
+	width: 180px;
+	height: 180px;
+}
+
+#inmueble3{
+	width: 180px;
+	height: 180px;
+}
+
+.Especif{
+	display: block;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+#portada{
+	width: 330px;
+	height: 180px;
+	justify-content: center;
+	margin: auto;
+	display: block;
+}
+
+#textoesp{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.infprop{
+	display: block;
+	justify-content: center;
+	height: 100%;
+	width: 50%;
+	padding: 50px;
+}
+
+#foto{
+	width: 150px;
+	height: 150px;
+	justify-content: center;
+	margin: auto;
+	display: block;
+}
+
+#descficha{
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+}
+
+#descficha:hover{
+	transition: 0.5;
+}
+
+#whatsapp{
+	background-color: #189d0e;
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+}
+
+#whatsapp:hover{
+	transition: 0.5;
+}
+
+#verficha{
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+}
+
+#verficha:hover{
+	transition: 0.5;
+}
+
