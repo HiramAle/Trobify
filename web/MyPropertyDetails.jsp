@@ -1,16 +1,15 @@
 <%-- 
-    Document   : YourPropertys
-    Created on : 10/06/2021, 09:47:35 PM
-    Author     : magic
+    Document   : fichaDetalladaInm
+    Created on : 10/06/2021, 09:16:49 PM
+    Author     : alfre
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="Model.Property"%>
 <%@page import="Model.Agent"%>
 <%@page import="Model.Agency"%>
 <%@page import="Model.Client"%>
 <%@page import="Model.User"%>
 <%@page import="DataBase.DataBaseController"%>
+<%@page import="Model.Property"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     DataBaseController control = new DataBaseController();
@@ -33,6 +32,7 @@
             session.setAttribute("agency", agency);
             break;
     }
+    Property property = (Property) session.getAttribute("property");
 %>
 <!DOCTYPE html>
 <html>
@@ -42,10 +42,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
         <link rel="stylesheet" href="CSS/styles.css">
-        <link rel="stylesheet" href="CSS/indexStyles.css">
+        <link rel="stylesheet" href="CSS/MyPropertyDetailsStyle.css">
+
     </head>
-    <body>
+    <body onload="codeAddress()" >
         <%
             switch (userType) {
                 case 0:
@@ -96,75 +98,92 @@
                     break;
             }
         %>
+
         <div class="main" >
-
-
-
-            <div class="propertiesList" >
-                <%
-                    ArrayList<Property> properties = control.getProperties(user);
-                    for (int i = 0; i < properties.size(); i++) {
-
-
-                %>
-
-                <div class="propertyCard" >
-                    <div class="imagenMuestra" >
-                        <img src="Resources/Images/icon.png" alt="">
-                    </div>
-                    <div class="infoMuestra" name="card">
-                        <h2><%=properties.get(i).getPropertyName()%></h2>
-                        <p>Cuartos: <%=properties.get(i).getRooms()%></p>
-                        <p>Baños: <%=properties.get(i).getToilets()%></p>
-                        <p><%=properties.get(i).getDescription()%></p>
-                        <form action="MyPropertyDetails?property=<%=properties.get(i).getPropertyId()%>" method="POST" >
-                            <input type="submit" value="Ver Detalles" >
-                        </form>
-                    </div>
+            <div class="propertyInfo">
+                <div class="imagenMuestra" >
+                    <img src="Resources/Images/icon.png" alt="">
                 </div>
-                <%
-                    }
-                %>
-            </div>
-        </div>   
-        <div class="endSession" >
-            <a href="index.jsp"  >Cerrar Sesion</a>
-        </div>
+                <div class="infoMuestra" name="card">
+                    <h2><%=property.getPropertyName()%></h2>
+                    <p><%=property.getDescription()%></p>
+                    <p><%=property.getRooms()%> cuartos</p>
+                    <p><%=property.getToilets()%> baños</p>
+                    <p>En <%=property.getStateName()%> , <%=property.getCityName()%>,
+                        <%=property.getSuburb()%> , <%=property.getStreet()%>
 
+
+                    </p>
+                    <p>Número <%=property.getNumber()%></p>
+                    <p>Código Postal <%=property.getPostalCode()%></p>
+                </div>
+            </div>
+            <div class="mapainm">
+                <div id="map" >
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>
-
 <script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLenguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
 
 
+
+
+
+    function initMap() {
+        const myLatLng = {lat: 19.504249623950113, lng: -99.14669214847778};
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: myLatLng,
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "<%= property.getPropertyName() %>",
+        });
+    }
+
+
+
+
+
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap">
 </script>
 
 <style>
-    input[type="submit"] {
-        border-style: none;
-        text-decoration: none;
-        background-color: #21C7DB;
-        border-radius: 2em;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        padding-left: 7%;
-        padding-right:  7%;
-        top: 0;
-        color: #F9F9F9;
-        margin-left: 1%;
-        margin-right: 1%;
-        padding-left: 1%;
-        padding-right: 1%;
-        float: right;
-        transition: all 0.4s ease-in-out;
+
+    .propertyInfo{
+        margin: 5%;
+        padding: 5%;
+        border-radius: 1em;
+        background-color: white;
+        box-shadow: 1px 1px 10px gray;
+        display: flex;
     }
-    input[type="submit"]:hover {
-        transform: scale(1.1);
-	transition: 0.5s;
-        cursor: pointer ;
+    .propertyInfo{
+        width: 50%;
+        height: 100%;
+        padding: 2%;
+    }
+    .mapainm{
+        width: 50%;
+        height: 100%;
+        margin: auto;    
+        padding: 2%;
+
+    }
+
+    #map{
+        width: 100%;
+        height: 400px;
+
     }
 </style>

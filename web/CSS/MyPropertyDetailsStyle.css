@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/06/2021, 06:23:21 PM
+    Author     : magic
+*/
+
+.propertyCard{
+    margin: 5%;
+    padding: 5%;
+    border-radius: 1em;
+    background-color: white;
+    box-shadow: 1px 1px 10px gray;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+}

@@ -20,6 +20,10 @@
         <servlet-name>AddProperty</servlet-name>
         <servlet-class>Servlets.AddProperty</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MyPropertyDetails</servlet-name>
+        <servlet-class>Servlets.MyPropertyDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/Servlet</url-pattern>
@@ -39,5 +43,9 @@
     <servlet-mapping>
         <servlet-name>AddProperty</servlet-name>
         <url-pattern>/AddProperty</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyPropertyDetails</servlet-name>
+        <url-pattern>/MyPropertyDetails</url-pattern>
     </servlet-mapping>
 </web-app>

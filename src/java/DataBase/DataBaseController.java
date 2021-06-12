@@ -131,6 +131,44 @@ public class DataBaseController {
         return agent;
     }
     
+    public Property searchProperty(int id)throws ClassNotFoundException{
+        Property property = new Property();
+        try {
+            control.CreateConnection();
+            query="SELECT i.idInmueble,i.correoPropietario,i.nombreInmueble,i.numeroCuartos,i.numeroBanos,i.descripcionInmueble,\n" +
+                    "	d.colonia,d.calle,d.numero,\n" +
+                    "    cp.codigoPostal,\n" +
+                    "	c.nombreCiudad,e.nombreEstado,p.nombrePais \n" +
+                    "	FROM Inmueble AS i \n" +
+                    "	INNER JOIN Direccion AS d ON(i.idDireccion = d.idDireccion) \n" +
+                    "    INNER JOIN CodigoPostal AS cp ON (d.codigopostal=cp.codigoPostal)\n" +
+                    "    INNER JOIN Ciudad AS c ON (cp.idCiudad = c.idCiudad)\n" +
+                    "    INNER JOIN Estado AS e ON (cp.idEstado = e.idEstado)\n" +
+                    "    INNER JOIN Pais AS p ON (cp.idPais = p.idPais) WHERE idInmueble = '"+id+"'";
+            res=control.SQLStatement(query);
+            if(res.next()){
+                property.setPropertyId(res.getInt(1));
+                property.setOwnerMail(res.getString(2));
+                property.setPropertyName(res.getString(3));
+                property.setRooms(res.getInt(4));
+                property.setToilets(res.getInt(5));
+                property.setDescription(res.getString(6));
+                property.setSuburb(res.getString(7));
+                property.setStreet(res.getString(8));
+                property.setNumber(res.getString(9));
+                property.setPostalCode(res.getInt(10));
+                property.setCityName(res.getString(11));
+                property.setStateName(res.getString(12));
+                property.setCountryName(res.getString(13));
+                
+            }
+        } catch (SQLException e) {
+            System.out.println("Problema en DATABASECONTROLLER");
+            System.out.println(e);
+        }
+        return property;
+    }
+    
     public void addAgency(Agency agency)throws ClassNotFoundException{
         try {
             control.CreateConnection();
@@ -167,6 +205,7 @@ public class DataBaseController {
             Property property = null;
             while(res.next()){
                 property = new Property();
+                property.setPropertyId(res.getInt(1));
                 property.setPropertyName(res.getString(4));
                 property.setRooms(res.getInt(5));
                 property.setToilets(res.getInt(6));

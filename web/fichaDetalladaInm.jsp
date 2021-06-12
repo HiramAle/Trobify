@@ -4,7 +4,11 @@
     Author     : alfre
 --%>
 
+<%@page import="Model.Property"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    Property property =(Property)session.getAttribute("property");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,6 +45,7 @@
                 </div>
                 <div class="Especif">
                     <img id="portada" src="Resources/Images/portada.jpg"><br>
+                    <p><%=property.getPropertyName() %></p>
                     <p id="textoesp">
                         Departamento super ubicado a 5 minutos de Polanco, a 6 cuadras de Metro San Joaquín y 3 cuadras de Mariano Escobedo.<br>
                         Recién remodelado. Ubicado en Planta Baja.<br>
