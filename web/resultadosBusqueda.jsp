@@ -26,7 +26,7 @@
             <div class="navbarOptions">
                 <a href="#"><div id="google_translate_element"></div></a>
                 <a href="Login.jsp" id="">Inicia sesion</a>
-                <a href="#info">¿Quienes somos?</a>
+                <a href="aboutUs.jsp">¿Quienes somos?</a>
                 <a href="enviarSugerencias.jsp">Enviar Sugerencias</a>
                 <a href="calculadora.jsp">Calculadora de préstamos</a>
             </div>

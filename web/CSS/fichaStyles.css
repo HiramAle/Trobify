@@ -1,0 +1,136 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/06/2021, 03:39:25 PM
+    Author     : alfre
+*/
+
+.mainFichaDet{
+        background-color: white;
+	padding-top: 10%;
+	display: flex;
+	justify-content: left;
+	height: 100%;
+	width: 100%;
+}
+
+.ficha{
+        background-color: white;
+	display: flex;
+	justify-content: left;
+	height: 100%;
+	width: 50%;
+	padding: 50px;
+}
+
+.ImagenesInmueble{
+	display: block;
+}
+
+#inmueble1{
+	width: 180px;
+	height: 180px;
+}
+
+#inmueble2{
+	width: 180px;
+	height: 180px;
+}
+
+#inmueble3{
+	width: 180px;
+	height: 180px;
+}
+
+.Especif{
+	display: block;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+#portada{
+	width: 330px;
+	height: 180px;
+	justify-content: center;
+	margin: auto;
+	display: block;
+}
+
+#textoesp{
+        text-align: justify;
+        font-size-adjust: 0.5;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.infprop{
+	display: block;
+	justify-content: center;
+	height: 100%;
+	width: 50%;
+	padding: 50px;
+}
+
+#foto{
+	width: 150px;
+	height: 150px;
+	justify-content: center;
+	margin: auto;
+	display: block;
+}
+
+#descficha{
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        text-decoration: none;
+        color: white;
+	background-color: #2e96ff;
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+}
+
+#descficha:hover{
+        background-color: white;
+	transition: 0.5;
+}
+
+#whatsapp{
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        text-decoration: none;
+        color: white;
+	background-color: #00bb2d;
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+}
+
+#whatsapp:hover{
+	transition: 0.5;
+}
+
+#verficha{
+	border-radius: 2em;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 5%;
+	padding-right:  5%;
+	top: 0;
+}
+
+#verficha:hover{
+	transition: 0.5;
+}

@@ -19,7 +19,7 @@
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap" async></script>
         <link rel="stylesheet" href="CSS/styles.css">
-        <link rel="stylesheet" href="CSS/indexStyles.css">
+        <link rel="stylesheet" href="CSS/fichaStyles.css">
 
     </head>
     <body>
@@ -52,8 +52,10 @@
                         2 Recamaras con clóset, 1 Baño Completo, Comedor, Estancia, Cocina Integral, Bodega. Caseta de vigilancia 24 hrs.<br>
                         No tiene estacionamiento pero se puede rentar dentro de la unidad.<br><br><br>
                         PRECIO: $5,890,000 <br>
-                    </p>
-                    <a href="" id="descficha">Descargar Ficha</a>
+                    </p>                    
+                    <p align="center">
+                    <a href="360view.jsp" id="descficha">Vista 360 de un cuarto del inmueble</a>
+                    </p>              
                 </div>
             </div>
             <div class="infprop">
